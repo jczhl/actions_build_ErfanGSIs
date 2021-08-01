@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://download.h2os.com/OnePlus6/MP/OnePlus6Hydrogen_22.K.51_OTA_051_all_2105262251_6fed6a93c6c54103.zip
-  ROM_NAME: OxygenOS
+  ROM_URL: https://www.coolapk.com/link?url=https%3A%2F%2Fdownload.meizu.com%2FFirmware%2FFlyme%2F16s%2F9.21.6.29%2Fcn_beta%2F20210629140442%2F243f074d%2Fupdate.zip
+  ROM_NAME: Flyme
   REPACK_NAME: GSI_by-jczhl
   make_type: ab     #aonly    ab
   TZ: Asia/Shanghai
@@ -35,7 +35,7 @@ jobs:
            docker rmi `docker images -q`
        - name: Cloning ErfanGSIs tools
          run: |
-            git clone --recurse-submodules https://github.com/jczhl/ErfanGSIs.git
+            git clone --recurse-submodules https://github.com/zhlhlf/ErfanGSIs.git
             sudo chmod -R 777 ErfanGSIs
             curl -sL https://git.io/file-transfer | sh
              
@@ -50,7 +50,7 @@ jobs:
            sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME --$make_type
            ls /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
 
-       - name: Packing Output File to zip
+       - name: Packing Output File to 7z
          run: |
             7z a -r $ROM_NAME-$REPACK_NAME-$make_type.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*
           
