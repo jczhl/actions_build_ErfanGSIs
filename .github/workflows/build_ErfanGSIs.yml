@@ -49,8 +49,8 @@ jobs:
          run: |
            sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME --$make_type
            ls /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
-            7z a -r $REPACK_NAME-$make_type.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*
+            7z a -r $ROM_NAME-$REPACK_NAME-$make_type.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*
           
        - name: Uploading SGSI to WeTransfer
          run: |
-            sudo ./transfer wet $REPACK_NAME-$make_type.7z
+            sudo ./transfer wet $ROM_NAME-$REPACK_NAME-$make_type.7z
