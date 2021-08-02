@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://www.coolapk.com/link?url=https%3A%2F%2Fdownload.meizu.com%2FFirmware%2FFlyme%2F16th%2F9.21.6.29%2Fcn_beta%2F20210629122654%2F0197229f%2Fupdate.zip
+  ROM_URL: http://download.h2os.com/OnePlus6/MP/OnePlus6Hydrogen_22.K.51_OTA_051_all_2105262251_6fed6a93c6c54103.zip
   ROM_NAME: Flyme
   REPACK_NAME: GSI_by-jczhl
   make_type: ab     #aonly    ab
@@ -35,7 +35,7 @@ jobs:
            docker rmi `docker images -q`
        - name: Cloning ErfanGSIs tools
          run: |
-            git clone --recurse-submodules https://github.com/zhlhlf/ErfanGSIs.git
+            git clone --recurse-submodules https://github.com/jczhl/ErfanGSIs.git
             sudo chmod -R 777 ErfanGSIs
             curl -sL https://git.io/file-transfer | sh
              
