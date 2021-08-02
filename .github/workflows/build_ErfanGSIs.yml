@@ -1,4 +1,4 @@
-name: build_ErfanGSIs
+giname: build_ErfanGSIs
 
 on:
 #  release:
@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://download.h2os.com/OnePlus6/MP/OnePlus6Hydrogen_22.K.51_OTA_051_all_2105262251_6fed6a93c6c54103.zip
-  ROM_NAME: OxygenOS  #  Flyme  GenericI   MIUI   OxygenOS  Pixel
+  ROM_URL: https://dl.akr-developers.com/verify/xiaomi/dipper/derpfest/vanilla/DerpFest-10-Official-dipper-20200911-VANILLA.zip?mac=0cf14e62381578bbe03896913ca540e4d348b2fc&ts=1627916011&cp=10
+  ROM_NAME: Pixel  #  Flyme  GenericI   MIUI   OxygenOS  Pixel
   REPACK_NAME: GSI_by-jczhl
   make_type: ab     #aonly    ab
   TZ: Asia/Shanghai
