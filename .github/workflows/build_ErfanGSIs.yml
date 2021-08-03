@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://dl.akr-developers.com/verify/xiaomi/dipper/derpfest/vanilla/DerpFest-10-Official-dipper-20200911-VANILLA.zip?mac=0cf14e62381578bbe03896913ca540e4d348b2fc&ts=1627916011&cp=10
-  ROM_NAME: Pixel  #  Flyme  GenericI   MIUI   OxygenOS  Pixel
+  ROM_URL: https://bigota.d.miui.com/V12.5.1.0.QEECNXM/miui_MIMIX3_V12.5.1.0.QEECNXM_b008b041ef_10.0.zip
+  ROM_NAME: MIUI  #  Flyme  GenericI   MIUI   OxygenOS  Pixel
   REPACK_NAME: GSI_by-jczhl
   make_type: ab     #aonly    ab
   TZ: Asia/Shanghai
