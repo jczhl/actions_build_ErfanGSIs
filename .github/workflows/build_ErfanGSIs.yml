@@ -30,7 +30,7 @@ jobs:
        - name: Checkout
          uses: actions/checkout@master
          
-       - name: Cleaning up
+       - name: 清理环境
          run: |
            docker rmi `docker images -q`
        - name: Cloning ErfanGSIs tools
@@ -39,21 +39,21 @@ jobs:
             sudo chmod -R 777 ErfanGSIs
             curl -sL https://git.io/file-transfer | sh
              
-       - name: Setting up Porting Environment
+       - name: 配置环境
          run: |
            cd ErfanGSIs
            sudo apt update
            sudo bash setup.sh
        
-       - name: Download Stock Rom & Generate GSI
+       - name: 下载ROM & 并生成GSI
          run: |
            sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME --$make_type
            ls /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
 
-       - name: Packing Output File to 7z
+       - name: 7z打包GSI镜像
          run: |
             7z a -r $ROM_NAME-$REPACK_NAME-$make_type.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*
           
-       - name: Uploading SGSI to WeTransfer
+       - name: 上传7z压缩包至WeTransfer
          run: |
             sudo ./transfer wet $ROM_NAME-$REPACK_NAME-$make_type.7z
