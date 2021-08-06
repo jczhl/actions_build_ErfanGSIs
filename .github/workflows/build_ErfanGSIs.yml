@@ -27,7 +27,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
-       - name: Checkout
+       - name: 获取本仓库源码
          uses: actions/checkout@master
          
        - name: 清理环境
@@ -63,6 +63,6 @@ jobs:
          uses: ncipollo/release-action@v1.8.6
          with:
            artifacts: $OS_TYPE-$REPACK_NAME-$make_type.7z
-           name: $OS_TYPE-$REPACK_NAME-$make_type
-           tag: $OS_TYPE-$REPACK_NAME-$make_type-${{ github.run_number }}
+           name: xiaoxinSGSI-ab-Android10-unpack
+           tag: xiaoxinSGSI-ab-Android10-${{ github.run_number }}
            token: ${{ secrets.GITHUB_TOKEN }}
