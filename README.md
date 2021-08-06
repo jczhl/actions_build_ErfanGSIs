@@ -6,3 +6,7 @@
   内容：支持目前最近SGSI包括安卓12 S
   by jczhl
 ```
+```
+cat zhlhlf/* > SGSI.zip
+```
+
