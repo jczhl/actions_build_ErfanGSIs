@@ -76,6 +76,7 @@ jobs:
          uses: ncipollo/release-action@v1.8.6
          with:
            artifacts: $OS_TYPE-$REPACK_NAME-$make_type.7z
-           name: xiaoxinSGSI-ab-Android10-unpack
-           tag: xiaoxinSGSI-ab-Android10-${{ github.run_number }}
+           name: SGSI-ab-Android10-unpack
+           tag: SGSI-ab-Android10-${{ github.run_number }}
            token: ${{ secrets.GITHUB_TOKEN }}
+I
