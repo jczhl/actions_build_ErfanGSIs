@@ -55,6 +55,14 @@ jobs:
          run: |
             7z a -r $OS_TYPE-$REPACK_NAME-$make_type.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*
           
-       - name: 上传7z压缩包至WeTransfer
-         run: |
-            sudo ./transfer wet $OS_TYPE-$REPACK_NAME-$make_type.7z
+#       - name: 上传7z压缩包至WeTransfer
+ #        run: |
+  #          sudo ./transfer wet $OS_TYPE-$REPACK_NAME-$make_type.7z
+
+       - name: 上传到 action-gh-release...
+         uses: ncipollo/release-action@v1.8.6
+         with:
+           artifacts: $OS_TYPE-$REPACK_NAME-$make_type.7z
+           name: $OS_TYPE-$REPACK_NAME-$make_type
+           tag: $OS_TYPE-$REPACK_NAME-$make_type-${{ github.run_number }}
+           token: ${{ secrets.GITHUB_TOKEN }}
