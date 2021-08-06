@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://bigota.d.miui.com/V12.5.1.0.QEECNXM/miui_MIMIX3_V12.5.1.0.QEECNXM_b008b041ef_10.0.zip
-  OS_TYPE: MIUI  #  Flyme  GenericI   MIUI   OxygenOS  Pixel
+  ROM_URL: https://www.coolapk.com/link?url=https%3A%2F%2Fdownload.meizu.com%2FFirmware%2FFlyme%2F16s%2F9.21.6.29%2Fcn_beta%2F20210629140442%2F243f074d%2Fupdate.zip
+  OS_TYPE: Flyme  #  Flyme  GenericI   MIUI   OxygenOS  Pixel
   REPACK_NAME: GSI_by-jczhl
   make_type: ab     #aonly    ab
   TZ: Asia/Shanghai
@@ -36,7 +36,7 @@ jobs:
            
        - name: 下载 ErfanGSIs 工具
          run: |
-            git clone --recurse-submodules https://github.com/jczhl/ErfanGSIs.git
+            git clone --recurse-submodules https://github.com/zhl/ErfanGSIs.git
             sudo chmod -R 777 ErfanGSIs
             curl -sL https://git.io/file-transfer | sh
              
