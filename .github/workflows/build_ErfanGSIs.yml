@@ -51,9 +51,22 @@ jobs:
            sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $OS_TYPE --$make_type
            ls /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
 
-       - name: 7z打包GSI镜像
+#       - name: 7z打包GSI镜像
+ #        run: |
+  #          7z a -r $OS_TYPE-$REPACK_NAME-$make_type.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*
+            
+       - name: zip 打包
          run: |
-            7z a -r $OS_TYPE-$REPACK_NAME-$make_type.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*
+           mkdir -p upload
+           zip -r $OS_TYPE-$REPACK_NAME-$make_type.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*
+           if [[ $(du -sb $OS_TYPE-$REPACK_NAME-$make_type.7z | awk '{print $1}') -gt 2097152000 ]];then
+                 echo -e "split packaging..."
+                 tar -cpzf - $OS_TYPE-$REPACK_NAME-$make_type.7z | split -d -b 1024m - upload/$OS_TYPE-$REPACK_NAME-$make_type.7z
+             else
+                 mv $OS_TYPE-$REPACK_NAME-$make_type.7z upload/
+             fi
+             ls "upload"
+
           
 #       - name: 上传7z压缩包至WeTransfer
  #        run: |
