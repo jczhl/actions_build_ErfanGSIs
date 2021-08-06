@@ -69,15 +69,15 @@ jobs:
          run: |
           mv $OS_TYPE-$REPACK_NAME-$make_type.* zhlhlf
                               
-#       - name: 上传zhlhlf目录所有文件至WeTransfer
- #        run: |
-  #          sudo ./transfer wet zhlhlf/*
+       - name: 上传zhlhlf目录所有文件至WeTransfer
+         run: |
+            sudo ./transfer wet zhlhlf/*
 
-       - name: 上传zhlhlf目录所有文件至 release
-         uses: ncipollo/release-action@v1.8.6
-         with:
-           artifacts: zhlhlf/*
-           name: SGSI-ab-Android10
-           tag: SGSI-ab-Android10-${{ github.run_number }}
-           token: ${{ secrets.GITHUB_TOKEN }}
+#       - name: 上传zhlhlf目录所有文件至 release
+ #        uses: ncipollo/release-action@v1.8.6
+  #       with:
+   #        artifacts: zhlhlf/*
+    #       name: SGSI-ab-Android10
+     #      tag: SGSI-ab-Android10-${{ github.run_number }}
+      #     token: ${{ secrets.GITHUB_TOKEN }}
 
