@@ -42,6 +42,7 @@ jobs:
              
        - name: 配置环境
          run: |
+           mkdir zhlhlf
            cd ErfanGSIs
            sudo apt update
            sudo bash setup.sh
@@ -57,27 +58,26 @@ jobs:
             
        - name: zip 打包
          run: |
-           mkdir -p upload
-           zip -r $OS_TYPE-$REPACK_NAME-$make_type.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*
-           if [[ $(du -sb $OS_TYPE-$REPACK_NAME-$make_type.7z | awk '{print $1}') -gt 2097152000 ]];then
+           zip -r $OS_TYPE-$REPACK_NAME-$make_type.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*
+           ls
+           if [[ $(du -sb $OS_TYPE-$REPACK_NAME-$make_type.zip | awk '{print $1}') -gt 2097152000 ]];then
                  echo -e "split packaging..."
-                 tar -cpzf - $OS_TYPE-$REPACK_NAME-$make_type.7z | split -d -b 1024m - upload/$OS_TYPE-$REPACK_NAME-$make_type.7z
-             else
-                 mv $OS_TYPE-$REPACK_NAME-$make_type.7z upload/
+                 tar -cpzf - $OS_TYPE-$REPACK_NAME-$make_type.zip | split -d -b 1024m - upload/$OS_TYPE-$REPACK_NAME-$make_type.zip
              fi
-             ls "upload"
 
-          
-#       - name: 上传7z压缩包至WeTransfer
+       - name: 移动生成包至zhlhlf目录
+         run: |
+          mv $OS_TYPE-$REPACK_NAME-$make_type.* zhlhlf
+                              
+#       - name: 上传zhlhlf目录所有文件至WeTransfer
  #        run: |
-  #          sudo ./transfer wet $OS_TYPE-$REPACK_NAME-$make_type.7z
+  #          sudo ./transfer wet zhlhlf/*
 
-       - name: 上传到 action-gh-release...
+       - name: 上传zhlhlf目录所有文件至 release
          uses: ncipollo/release-action@v1.8.6
          with:
-           artifacts: $OS_TYPE-$REPACK_NAME-$make_type.7z
-           name: SGSI-ab-Android10-unpack
+           artifacts: zhlhlf/*
+           name: SGSI-ab-Android10
            tag: SGSI-ab-Android10-${{ github.run_number }}
            token: ${{ secrets.GITHUB_TOKEN }}
-
 
