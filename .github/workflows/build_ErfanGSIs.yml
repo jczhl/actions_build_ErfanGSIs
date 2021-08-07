@@ -15,7 +15,7 @@ on:
     
 env:
   ROM_URL: https://coloroswebsitefs.coloros.com/coloroswebsite-coloros-com/null_20210720204333/PAFM00_11_OTA_3240_all_EmrOGJFGRPXb.ozip
-  OS_TYPE: ColorOS  #  Flyme  GenericI   MIUI   OxygenOS  Pixel  ColorOS
+  OS_TYPE: Flyme  #  Flyme  GenericI   MIUI   OxygenOS  Pixel  ColorOS
   REPACK_NAME: GSI_by-jczhl
   make_type: ab     #aonly    ab
   TZ: Asia/Shanghai
@@ -52,18 +52,18 @@ jobs:
            sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $OS_TYPE --$make_type
            ls /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
 
-       - name: 7z打包GSI镜像
-         run: |
-            7z a -r $OS_TYPE-$REPACK_NAME-$make_type.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*
-            
-#       - name: zip 打包
+#       - name: 7z打包GSI镜像
  #        run: |
-  #         zip -r $OS_TYPE-$REPACK_NAME-$make_type.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*
-   #        ls
-    #       if [[ $(du -sb $OS_TYPE-$REPACK_NAME-$make_type.zip | awk '{print $1}') -gt 2097152000 ]];then
-     #            echo -e "split packaging..."
-      #           tar -cpzf - $OS_TYPE-$REPACK_NAME-$make_type.zip | split -d -b 1024m - upload/$OS_TYPE-$REPACK_NAME-$make_type.zip
-       #      fi
+  #          7z a -r $OS_TYPE-$REPACK_NAME-$make_type.7z /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*
+            
+       - name: zip 打包
+         run: |
+           zip -r $OS_TYPE-$REPACK_NAME-$make_type.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*
+           ls
+           if [[ $(du -sb $OS_TYPE-$REPACK_NAME-$make_type.zip | awk '{print $1}') -gt 2097152000 ]];then
+                 echo -e "split packaging..."
+                 tar -cpzf - $OS_TYPE-$REPACK_NAME-$make_type.zip | split -d -b 1024m - $OS_TYPE-$REPACK_NAME-$make_type.zip
+             fi
 
        - name: 移动生成包至zhlhlf目录
          run: |
