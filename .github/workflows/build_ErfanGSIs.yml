@@ -14,11 +14,11 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://ip4027188859.mobgslb.tbcache.com/Firmware/Flyme/meizu17_Pro/8.2.0.1/cn/20210324181824/a0cf8c29/update.zip?ali_redirect_domain=firmware.meizu.com&ali_redirect_ex_ftag=b68388cfbe13c559306cb6d17b1f474066cf71f3d404a558&ali_redirect_ex_tmining_ts=1628297037&ali_redirect_ex_tmining_expire=3600&ali_redirect_ex_hot=100
-  rom_name: PAFM00_11_OTA_3240_all_EmrOGJFGRPXb.zip  REPACK_NAME: GSI_by-jczhl
+  ROM_URL: https://www.coolapk.com/link?url=https%3A%2F%2Fdownload.meizu.com%2FFirmware%2FFlyme%2F16th%2F9.21.6.29%2Fcn_beta%2F20210629122654%2F0197229f%2Fupdate.zip
+  OS_TYPE: Flyme  #  Flyme  GenericI   MIUI   OxygenOS  Pixel  ColorOS
+  REPACK_NAME: GSI_by-jczhl
   make_type: ab     #aonly    ab
   TZ: Asia/Shanghai
-
 
 jobs:
   build:
