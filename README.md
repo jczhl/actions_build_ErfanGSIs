@@ -18,6 +18,5 @@ Flyme     Generic   MIUI      OxygenOS  Pixel
 ```
 ```
 安卓11&12支持：
-```
 Generic  Pixel
 ```
