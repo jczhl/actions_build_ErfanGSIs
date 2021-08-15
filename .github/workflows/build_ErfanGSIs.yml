@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://bigota.d.miui.com/V12.5.3.0.RJSCNXM/miui_GAUGUIN_V12.5.3.0.RJSCNXM_97aef68cde_11.0.zip
+  ROM_URL: https://bigota.d.miui.com/V12.5.1.0.QEBCNXM/miui_MI8SE_V12.5.1.0.QEBCNXM_d9815dfb66_10.0.zip
   OS_TYPE: MIUI  #  Flyme  GenericI   MIUI   OxygenOS  Pixel  ColorOS
   REPACK_NAME: GSI_by-jczhl
   make_type: ab     #aonly    ab
