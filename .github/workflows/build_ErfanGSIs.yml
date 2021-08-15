@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://bigota.d.miui.com/V12.5.1.0.QECCNXM/miui_MI8UD_V12.5.1.0.QECCNXM_06f3dbf0f0_10.0.zip
+  ROM_URL: https://bigota.d.miui.com/V12.5.5.0.RFKCNXM/miui_RAPHAEL_V12.5.5.0.RFKCNXM_f3919faa90_11.0.zip
   OS_TYPE: MIUI  #  Flyme  GenericI   MIUI   OxygenOS  Pixel  ColorOS
   REPACK_NAME: GSI_by-jczhl
   make_type: ab     #aonly    ab
