@@ -9,15 +9,22 @@ cat zhlhlf/* > SGSI.zip
 ```
 ```
 安卓9支持：
-ColorOS   MIUI      OneUI     Xperia
-Flyme     Moto      OxygenOS  ZUI
-Generic   Nubia     Pixel     ZenUI
+ColorOS  Generic Nubia    RazerUI ZUI
+CubotOS  JoyUI   OneUI    RogUI   ZenUI
+Flyme    MIUI    OxygenOS VOS
+Funtouch Moto    Pixel    Xperia
 ```
 ```
 安卓10支持：
-Flyme     Generic   MIUI      OxygenOS  Pixel
+Flyme   MIUI     Pixel    VOS
+Generic Moto     RogUI    ZUI
+JoyUI   OxygenOS Teracube ZenUI
 ```
 ```
-安卓11&12支持：
-Generic  Pixel
+安卓11支持：
+Flyme Generic MIUI OxygenOS Pixel VOS
+```
+```
+安卓12支持：
+Generic Pixel
 ```
