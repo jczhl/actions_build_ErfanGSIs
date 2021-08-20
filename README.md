@@ -2,6 +2,7 @@
 
 基于Github Actions制作的自动跑ErfanGSI的脚本
 更新日期：2021年8月9日        核心文件：ErfanGSIs
+地址：https://github.com/TrebleExperience/ErfanGSIs-TrebleExperience
 by jczhl
 ```
 cat zhlhlf/* > SGSI.zip
