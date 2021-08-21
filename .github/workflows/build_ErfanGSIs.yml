@@ -35,7 +35,7 @@ jobs:
            
        - name: 下载 ErfanGSIs 工具
          run: |
-            git clone --recurse-submodules https://github.com/TrebleExperience/ErfanGSIs-TrebleExperience.git $GITHUB_WORKSPACE/ErfanGSIs
+            git clone --recurse-submodules https://github.com/zhlhlf/ErfanGSIs-TrebleExperience.git $GITHUB_WORKSPACE/ErfanGSIs
             sudo chmod -R 777 ErfanGSIs
             curl -sL https://git.io/file-transfer | sh
              
