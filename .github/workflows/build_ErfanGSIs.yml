@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://116-153-40-4.ksyungslb.com/bigota.d.miui.com/V12.5.1.0.RGHCNXM/miui_PHOENIX_V12.5.1.0.RGHCNXM_1012431ee6_11.0.zip?ksy_gslb_referer=http%3A%2F%2Fwww.miui.com%2Fgetrom.php%3Fr%3D364%26m%3Dyes%26app%3Dfalse
+  ROM_URL: https://ip4014084061.mobgslb.tbcache.com/Firmware/Flyme/meizu17/8.2.0.1/cn/20210422104521/f965bcad/update.zip?ali_redirect_domain=firmware.meizu.com&ali_redirect_ex_ftag=b4df4bc12fec21bbabbd6a05402d07dda002dfe6a40e559b&ali_redirect_ex_tmining_ts=1629556317&ali_redirect_ex_tmining_expire=3600&ali_redirect_ex_hot=100
   OS_TYPE: MIUI  #  Flyme  GenericI   MIUI   OxygenOS  Pixel  ColorOS
   REPACK_NAME: GSI_by-jczhl
   make_type: ab     #aonly    ab
